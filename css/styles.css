@@ -1,0 +1,279 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fdf6e3; /* Warm off-white */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: #f8dada; /* Light pink */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo a {
+    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+    color: #4a2f27 !important; /* Adjusted name color */
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+/* Menu Fix */
+.sidebar nav {
+    width: 100%;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #5a3e36;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s ease, background 0.3s ease;
+    border-radius: 5px;
+}
+
+.sidebar nav ul li a:hover {
+    color: white;
+    background-color: #ff7f7f; /* Soft red for hover effect */
+}
+
+/* Main Content */
+.content-wrapper {
+    margin-left: 240px;
+    padding: 40px;
+    width: calc(100% - 240px);
+    min-height: 100vh;
+}
+
+/* Work Section Fix (Ensuring iPhone Mockups Show Fully) */
+#work {
+    margin-bottom: 80px; /* Increased spacing before Skills */
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Increased max height for iPhone mockups */
+    object-fit: contain; /* Ensures full image visibility */
+    border-radius: 8px;
+}
+
+/* Skills Section */
+#skills {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.skill-name {
+    font-weight: bold;
+    color: #5a3e36;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: #f0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: #ff7f7f; /* Soft red */
+    border-radius: 5px;
+    transition: width 0.8s ease-in-out;
+    animation: fill 1.2s ease-out forwards;
+}
+
+@keyframes fill {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Tools Section Fix */
+.toolkit-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px;
+}
+
+.tool {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+}
+
+.tool img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tool:hover img {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* Updated Tool Labels (Removed Hyphens) */
+.tool-label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #5a3e36;
+    text-align: center;
+    position: relative;
+}
+
+.tooltip {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 50%;
+    bottom: -25px;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tool:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 160px;
+    }
+    .sidebar ul li a {
+        font-size: 1rem;
+    }
+    .content-wrapper {
+        margin-left: 180px;
+        width: calc(100% - 180px);
+    }
+}
+/* Contact Section */
+#contact {
+    text-align: center;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #contact h2 {
+    color: #5a3e36;
+    font-size: 1.8rem;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    color: #4a2f27;
+    margin: 10px 0;
+  }
+  
+  .contact-info a {
+    color: #ff7f7f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .contact-info a:hover {
+    color: #e04f4f;
+  }
+  
+  /* LinkedIn Button */
+  .contact-info a[href*="linkedin"] {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #0077b5;
+    color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .contact-info a[href*="linkedin"]:hover {
+    background: #005582;
+  }
